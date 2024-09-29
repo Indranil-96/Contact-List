@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="fstyle.css"> -->
+    <title>My Contact List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- As a heading -->
+            <nav class="navbar mt-2 navbar-light" style="background-color: #643ff7;">
+                <div class="container-fluid">
+                <span class="navbar-brand mb-0 text-light h2">My Contact List</span>
+                </div>
+            </nav>
+            <!-- Nav Ending -->
+
+            <!-- Starting of list-Display -->
+
+            <div class="card mt-4"  style="width: 20rem;">
+
+                <ul class="list-group list-group-flush">
+                  <%  for(i of contact){ %>
+                    <li class="list-group-item bg-primary mt-2"> Name:-<%=i.Name %> <br> Ph:-<%=i.ph%> </li>
+                 <% } %>
+                </ul>
+            </div>
+
+            <!-- Ending of display -->
+
+            <!-- Starting of from -->
+
+            <form action="Contact" method="post">
+                <div class="mb-3 mt-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" class="form-control" name="Name" id="exampleInputEmail1" placeholder="Enter Name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Phone</label>
+                  <input type="number" class="form-control" name="ph" id="exampleInputPassword1" placeholder="Enter Phone Number" required>
+                </div>
+                <button type="submit" class="btn btn-info">Add Contact</button>
+              </form>
+            <!-- Ending of form
+
+        </div>
+    </div>
+</body>
+</html>
